@@ -4236,7 +4236,7 @@ elseif game.PlaceId == 4520749081 or game.PlaceId == 6381829480 or game.PlaceId 
     local Misc = RenUi:AddTab("雜項","")
     
     AADD:AddSeperator("公告")
-    AADD:AddLabel("\n此腳本為 企鵝 製作\n\n更新日期: 2023/1/29\n\n適用遊戲:[UPDATE 4.5.3] King Legacy🧲🥕")
+    AADD:AddLabel("\n\n\n\n\n\n此腳本為 企鵝 製作\n\n更新日期: 2023/1/29\n\n適用遊戲:[UPDATE 4.5.3] King Legacy🧲🥕\n\n\n左Alt隱藏腳本")
 
 
 
