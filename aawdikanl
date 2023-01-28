@@ -4795,20 +4795,20 @@ elseif game.PlaceId == 4520749081 or game.PlaceId == 6381829480 or game.PlaceId 
         PointStats = value
     end)
     
-    Combat:AddSeperator("Players")
+    Combat:AddSeperator("玩家")
     
-    local plyserv = Combat:AddLabel("Players")
+    local plyserv = Combat:AddLabel("玩家")
     
     spawn(function()
         while wait() do
             pcall(function()
                 for i,v in pairs(game:GetService("Players"):GetPlayers()) do
                     if i == 12 then
-                        plyserv:Set("Players :".." "..i.." ".."/".." ".."12".." ".."(Max)")
+                        plyserv:Set("玩家人數 :".." "..i.." ".."/".." ".."12".." ".."(Max)")
                     elseif i == 1 then
-                        plyserv:Set("Player :".." "..i.." ".."/".." ".."12")
+                        plyserv:Set("玩家人數 :".." "..i.." ".."/".." ".."12")
                     else
-                        plyserv:Set("Players :".." "..i.." ".."/".." ".."12")
+                        plyserv:Set("玩家人數 :".." "..i.." ".."/".." ".."12")
                     end
                 end
             end)
@@ -5210,7 +5210,36 @@ elseif game.PlaceId == 4520749081 or game.PlaceId == 6381829480 or game.PlaceId 
         Dungeon:AddToggle("開始自動副本",_G.AutoFarmDungeon,function(value)
             _G.AutoFarmDungeon = value
         end)
-    
+        
+        Dungeon:AddButton("自動點擊",function()
+                game.StarterGui:SetCore("SendNotification", { 
+                    Title = "自動點擊功能已啟動"; 
+                    Text = "按L開/關 自動點擊"; 
+                    Icon = "rbxthumb://type=Asset&id=5082444247&w=150&h=150"; 
+                    Duration = 60; 
+                    Button1 = "了解"; 
+                    Callback = NotificationBindable;
+                    })
+                
+                local time = 0.01 --decrease if too slow increase if too fast
+                
+                click = false
+                m = game.Players.LocalPlayer:GetMouse()
+                m.KeyDown:connect(function(key)
+                if key == "l" then
+                if click == true then click = false
+                elseif
+                click == false then click = true
+                
+                while click == true do 
+                wait(time)
+                mouse1click()
+                end
+                end
+                end
+                end)
+            end)
+
         _G.SaveAt = 30
         Dungeon:AddSlider("安全點(%)",1,100,30,function(value)
             _G.SaveAt = value
