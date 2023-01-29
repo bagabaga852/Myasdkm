@@ -4249,7 +4249,7 @@ elseif game.PlaceId == 4520749081 or game.PlaceId == 6381829480 or game.PlaceId 
         local Hour = math.floor(GameTime/(60^2))%24
         local Minute = math.floor(GameTime/(60^1))%60
         local Second = math.floor(GameTime/(60^0))%60
-        Time:Set("伺服器時間 :  時"..Hour.." 分 : "..Minute.." 秒: "..Second)
+        Time:Set("進入伺服器時間 :  時:"..Hour.."  分 :"..Minute.."  秒:"..Second)
     end
     
     spawn(function()
